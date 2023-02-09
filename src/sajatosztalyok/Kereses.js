@@ -35,7 +35,7 @@ export default class FetchExample extends React.Component {
 
 
   componentDidMount(){
-    return fetch(IP.ipcim +  'film')
+    return fetch(IP.ipcim +  'auto')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -87,6 +87,7 @@ export default class FetchExample extends React.Component {
     return(
       <View style={{flex: 1, paddingTop:20}}>
 {/*-----------------------------------------------------------Keresés  */}
+
         <Text style={{marginTop:50, marginLeft:20,marginRight:20}}>Add meg a keresendő szót:</Text>
         <TextInput
         style={{height: 40,  marginLeft:20,marginRight:20, marginBottom:20}}
@@ -94,6 +95,7 @@ export default class FetchExample extends React.Component {
         onChangeText={(beirtszoveg)=>this.setState({szo:beirtszoveg})}
         value={this.state.szo}
       />
+      
       <TouchableOpacity
         style={styles.kekgomb}
         onPress={()=>this.keres()}
@@ -107,11 +109,11 @@ export default class FetchExample extends React.Component {
 
           <View >
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.film_cim} </Text>
-          <Image  source={{uri: IP.ipcim + item.film_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
+          <Image  source={{uri: IP.ipcim + item.auto_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
 
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.film_id)}
+        onPress={async ()=>this.szavazat(item.auto_id)}
       >
         <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Erre szavazok</Text>
       </TouchableOpacity>
@@ -120,7 +122,7 @@ export default class FetchExample extends React.Component {
         }
 
         
-          keyExtractor={({film_id}, index) => film_id}
+          keyExtractor={({auto_id}, index) => auto_id}
         />
       </View>
     );
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
   
   kekgomb: {
     alignItems: "center",
-    backgroundColor: "blue",
+    backgroundColor: "#68BBE3",
     padding: 10,
     width:300,
     marginLeft:"auto",

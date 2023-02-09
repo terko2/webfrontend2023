@@ -16,6 +16,10 @@ import BoardAdmin from "./components/board-admin.component";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import Kereses from "./sajatosztalyok/Kereses"
+import Auto from "./sajatosztalyok/Auto"
+import Autok from "./sajatosztalyok/Autok"
+import Szalloda from "./sajatosztalyok/Szalloda"
+
 
 class App extends Component {
   constructor(props) {
@@ -54,7 +58,7 @@ class App extends Component {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
         
-        Dice Roller
+        Nyaralás
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -74,6 +78,25 @@ class App extends Component {
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link to={"/Szalloda"} className="nav-link">
+                Szálloda
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/Autok"} className="nav-link">
+                Autók
+              </Link>
+            </li>
+
+            
+
+            <li className="nav-item">
+              <Link to={"/Auto"} className="nav-link">
+                Beállítások
+              </Link>
+            </li>
+
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -82,6 +105,8 @@ class App extends Component {
               </li>
             )}
 
+{/*----------Admin menü pont-------*/}
+
             {showAdminBoard && (
               <li className="nav-item">
                 <Link to={"/admin"} className="nav-link">
@@ -89,6 +114,18 @@ class App extends Component {
                 </Link>
               </li>
             )}
+
+
+
+            {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/admin"} className="nav-link">
+                  Admin lap
+                </Link>
+              </li>
+            )}
+
+
 
             {currentUser && (
               <li className="nav-item">
@@ -158,6 +195,11 @@ class App extends Component {
             <Route path="/admin" component={BoardAdmin} />
 
             <Route path="/Kereses" component={Kereses} />
+            <Route path="/Auto" component={Auto} />
+            <Route path="/Autok" component={Autok} />
+            <Route path="/Szalloda" component={Szalloda} />
+
+
 
           </Switch>
         </div>
