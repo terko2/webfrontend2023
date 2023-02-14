@@ -145,7 +145,7 @@ atalakit=(parameter)=>{
           style={styles.button}
           onPress={async ()=>this.szavazat(item.auto_nev)}
         >
-          <Text style={{fontStyle:"italic",color:'white',fontSize:20}}>Foglalás</Text>
+          <Text style={{fontStyle:"italic",color:'white',fontSize:20,}}>Törlés</Text>
           
         </TouchableOpacity>   
 
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     backgroundColor: "#68BBE3",
-    padding: 20,
+    padding: 10,
     marginLeft:50,
     marginRight:50
   },
@@ -197,8 +197,8 @@ const styles = StyleSheet.create({
     textAlign:"center",
     alignItems: "center",
     backgroundColor: "#68BBE3",
-    padding: 10,
-    width:25,
+    padding: 0,
+    width:15,
     borderRadius:10,
     marginLeft:1080,
     marginRight:0

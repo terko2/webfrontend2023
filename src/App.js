@@ -19,6 +19,8 @@ import Kereses from "./sajatosztalyok/Kereses"
 import Auto from "./sajatosztalyok/Auto"
 import Autok from "./sajatosztalyok/Autok"
 import Szalloda from "./sajatosztalyok/Szalloda"
+import Oldal from "./sajatosztalyok/Oldal"
+import Torlesautok from "./sajatosztalyok/Torlesautok"
 
 
 class App extends Component {
@@ -66,12 +68,14 @@ class App extends Component {
         <Link to={"/"} className="navbar-brand">
             bezKoder
           </Link>
+          
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Home
               </Link>
             </li>
+
             <li className="nav-item">
               <Link to={"/Kereses"} className="nav-link">
                 Keresés
@@ -89,7 +93,13 @@ class App extends Component {
               </Link>
             </li>
 
-            
+            <Link to={"/Oldal"} className="nav-link">
+                Oldal
+              </Link>
+
+              <Link to={"/Torlesautok"} className="nav-link">
+              Törlés Autók
+              </Link>
 
             <li className="nav-item">
               <Link to={"/Auto"} className="nav-link">
@@ -198,8 +208,9 @@ class App extends Component {
             <Route path="/Auto" component={Auto} />
             <Route path="/Autok" component={Autok} />
             <Route path="/Szalloda" component={Szalloda} />
-
-
+            <Route path="/Oldal" component={Oldal} />
+            <Route path="/Torlesautok" component={Torlesautok} />
+            
 
           </Switch>
         </div>
